@@ -5,4 +5,4 @@ from django.db.utils import OperationalError
 import requests
 
 
-# I'm so sorry but a never wrote a test
+# I'm so sorry but unfortunately a never work with a testing

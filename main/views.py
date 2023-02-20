@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -8,6 +9,9 @@ from .functions import get_detail_from_vin
 
 
 class EndpointView(APIView):
+    
+    def get(self, request):
+        return HttpResponse('<h1>Hello world!</h1>')
         
     @swagger_auto_schema(
         operation_id='get_detail',
