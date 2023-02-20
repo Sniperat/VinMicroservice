@@ -4,7 +4,6 @@ from .models import DetailModel, WeightModel
 
 
 def get_model_object(json_data, vin_id):
-
     detail = DetailModel.objects.create(
         vin_id=vin_id,
         year=json_data['year'],
@@ -15,14 +14,14 @@ def get_model_object(json_data, vin_id):
     )
 
     json_weight = json_data['weight']
-    
+
     if isinstance(json_weight, list):
         for i in json_weight:
             WeightModel.objects.create(
-            _type=i['type'],
-            unit=i['unit'],
-            value=i['value'],
-            detail=detail
+                _type=i['type'],
+                unit=i['unit'],
+                value=i['value'],
+                detail=detail
             )
 
     else:
@@ -40,7 +39,7 @@ def get_detail_from_vin(vin_id):
     try:
         obj = DetailModel.objects.get(vin_id=vin_id)
     except:
-        r = requests.get(str(settings.VIN_DECODER_URL)+vin_id+'/')
+        r = requests.get(str(settings.VIN_DECODER_URL) + vin_id + '/')
         json_list = r.json()
         if json_list['decode']['status'] == 'SUCCESS':
             obj = get_model_object(json_list['decode']['vehicle'][0], vin_id)
