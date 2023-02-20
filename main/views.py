@@ -24,8 +24,9 @@ class EndpointView(APIView):
         vin_id = request.GET.get('vin', False)
         if vin_id and len(vin_id) == 17:
             data = get_detail_from_vin(vin_id)
-            serializer = DetailSerializer(data)
-            return Response(data=serializer.data)
-        else:
-            return Response(data='vin id is not correct!')
+            if data:
+                serializer = DetailSerializer(data)
+                return Response(data=serializer.data)
+        
+        return Response(data='vin id is not correct!')
 

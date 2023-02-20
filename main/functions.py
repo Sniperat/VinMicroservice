@@ -42,6 +42,8 @@ def get_detail_from_vin(vin_id):
     except:
         r = requests.get(str(settings.VIN_DECODER_URL)+vin_id+'/')
         json_list = r.json()
-        
-        obj = get_model_object(json_list['decode']['vehicle'][0], vin_id)
+        if json_list['decode']['status'] == 'SUCCESS':
+            obj = get_model_object(json_list['decode']['vehicle'][0], vin_id)
+        else:
+            return False
     return obj
