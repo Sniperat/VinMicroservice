@@ -10,14 +10,14 @@ and run on your terminal
 
 ### Create a file named   <i><b>`.env`</b></i>   inside of <b>`config/`</b> package and fill it with the following information:
 
->```SECRET_KEY=4h6y4hu5th8745yt8475ht748ht5g87o3ho``` <br>
+>```SECRET_KEY={something}``` <br>
 >```DEBUG=True```<br>
 >```DATABASE_NAME=postgres```<br>
 >```DATABASE_USER=postgres```<br>
 >```DATABASE_PASS=postgres```<br>
 >```DATABASE_HOST=db```<br>
 >```DATABASE_PORT=5432```<br>
->```VIN_DECODER_URL=http://18.202.200.86:9099/private/vin/decodes/```
+>```VIN_DECODER_URL={decode url}```
 
 
 ### First make sure you have docker installed on your computer
