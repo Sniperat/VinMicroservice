@@ -1,0 +1,69 @@
+info:
+  title: Vin Microservice Api
+  version: 1.0
+paths:
+  /?vinId={Vin id}:
+    get:
+      parameters:
+        - in: /
+          name: vinId
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                foo:
+                  value_v1:
+                    {
+                      "status": "success",
+                      "data": {
+                        "vin_id": "JN8DR07XX1W514175",
+                        "weight": [
+                          {
+                            "id": 1,
+                            "weight_type": "Curb Weight",
+                            "unit": "lbs",
+                            "value": 3985,
+                            "detail": "JN8DR07XX1W514175"
+                          },
+                          {
+                            "id": 2,
+                            "weight_type": "Standard Towing",
+                            "unit": "lbs",
+                            "value": 5000,
+                            "detail": "JN8DR07XX1W514175"
+                          },
+                          {
+                            "id": 3,
+                            "weight_type": "Standard GVWR",
+                            "unit": "lbs",
+                            "value": 5050,
+                            "detail": "JN8DR07XX1W514175"
+                          }
+                        ],
+                        "year": "2001",
+                        "make": "Nissan",
+                        "model": "Pathfinder",
+                        "detail_type": 0,
+                        "color": "",
+                        "dimensions": {
+                          "Cargo Length": "32.70",
+                          "Wheelbase(in)": "106.3",
+                          "Rear Legroom": "31.80",
+                          "Front Legroom": "41.70",
+                          "Rear Headroom": "37.50",
+                          "Front Headroom": "36.80",
+                          "Ground Clearance": "8.30",
+                          "Track Rear": "60.80",
+                          "Rear Shoulder Room": "56.40"
+                        }
+                      }
+                    }
+                  value_v2:
+                    {
+                      "status": "filed",
+                      "data": "Vin id is not correct"
+                    }
+      

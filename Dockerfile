@@ -5,9 +5,9 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /usr/src/vin_machine
 
-COPY ./req.txt /usr/src/req.txt
+COPY ./requirements.txt /usr/src/requirements.txt
 
-RUN pip install -r /usr/src/req.txt
+RUN pip install -r /usr/src/requirements.txt
 
 COPY . /usr/src/vin_machine
 

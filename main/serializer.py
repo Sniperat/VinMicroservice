@@ -3,7 +3,6 @@ from .models import DetailModel, WeightModel
 
 
 class WeightSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = WeightModel
         fields = '__all__'
@@ -14,4 +13,4 @@ class DetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DetailModel
-        fields = ['vin_id', 'year', 'make', 'model', '_type', 'color', 'dimensions', 'weight']
+        fields = '__all__'
